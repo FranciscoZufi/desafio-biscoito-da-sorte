@@ -7,6 +7,9 @@
 :root {
   font-size: 62.5%;
 }
+.hide {
+  display: none;
+}
 body {
   background: linear-gradient(45deg, #190361, #bb00ff);
 	
@@ -52,7 +55,18 @@ button img{
   line-height: 2.9rem;
   text-align: center;
   color: #000000;
-  margin-bottom: 1.7rem;
+  margin:0 auto 1.7rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+ 
+  background: #E4EDF1;
+  box-shadow: 2px 2px 2px rgba(85, 85, 85, 0.5);
+  
 }
 .screen1 {
   background: #FFFFFF;
@@ -61,17 +75,76 @@ button img{
   padding: 4.8rem 6.4rem 6.4rem;
 
   width: min(42.8rem, 90%);
-  
+  text-align: center;
 }
 
 .screen2 img{
-  margin-bottom: 1.7rem;
+  margin:0 auto 1.7rem;
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }
-.screen2 button{
-  margin-bottom: 4.8rem;
-}
+
 .screen2 {
   background: #FFFFFF;
   box-shadow: 0px 2rem 5rem rgba(0, 0, 0, 0.8);
   border-radius: .5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 4.8rem 6.4rem 4.8rem 6.4rem;
+  text-align: center;
+  max-width: 43rem;
+}
+.screen2 button {
+  padding: 1.6rem 1.6rem 1.6rem 1.6rem;
+  background-color: #FF9500;
+  border-radius: .4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: #ffffff;
+  margin:0 auto 6.4rem;
+}
+
+.screen1 button {
+  background-color: #ffffff;
+  border: none;
+}
+
+@keyframes treme {
+  0% {margin-left: 0;}
+  25% {margin-left: .5rem;}
+  50% {margin-left: 0;}
+  75% {margin-left: -.5rem;}
+  100% {margin-left: 0;}
+}
+
+.screen1 img:hover {
+  animation: treme .2s;
+  animation-iteration-count: 4;
+}
+
+@keyframes subir {
+  0% {margin-bottom: -13rem;
+  max-width: 3rem;
+  font-size: .1rem;
+  line-height: .1rem;
+}
+  25% {margin-bottom: -6rem;
+  max-width: 10rem;
+  font-size: 1rem;
+  line-height: 1rem;}
+
+  50% {margin-bottom: -3rem;
+  max-width: 15rem;
+  font-size: 1.8rem;
+  line-height: 2rem;}
+  100% {margin-bottom: 0;
+    font-size: 2.4rem;
+    line-height: 2.9rem;}
+}
+.screen2 .box{
+  animation: subir 150ms;
 }

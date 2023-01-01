@@ -63,14 +63,25 @@ const biscoit = [
 
 const screen1 = document.querySelector('.screen1')
 const screen2 = document.querySelector('.screen2')
+const btnTry = document.querySelector("#btnTry")
+const btnReset = document.querySelector("#btnReset")
+
 btnTry.addEventListener('click', handleTryClick)
-toggleScren()
+btnReset.addEventListener('click', handleResetClick)
+
 
 function handleTryClick(event) {
-  const text = biscoit[0]
+  toggleScreen()
+  const randomNumber = Math.floor(Math.random() * biscoit.length);
+  const text = biscoit[randomNumber]
+  screen2.querySelector("p").innerText = text
 }
 
-function toggleScren() {
-  screen1.classList.toggle('hide')
-  screen2.classList.toggle('hide')
+function handleResetClick() {
+  toggleScreen()
+}
+
+function toggleScreen() {
+  screen1.classList.toggle("hide")
+  screen2.classList.toggle("hide")
 }
